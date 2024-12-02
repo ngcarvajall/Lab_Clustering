@@ -306,7 +306,7 @@ class Clustering:
         Returns:
             None
         """
-        model = KMeans()
+        model = KMeans(random_state=42)
         visualizer = KElbowVisualizer(model, k=n_clusters, metric='silhouette')
         visualizer.fit(self.dataframe)
         visualizer.show()
