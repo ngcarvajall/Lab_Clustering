@@ -294,7 +294,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import math
 
-def graficar_relaciones_categoricas(dataframe, vr):
+def graficar_relaciones_categoricas(dataframe, vr, paleta):
     """
     Genera gráficos de barras en un subplot para todas las columnas categóricas
     mostrando su relación con la variable de respuesta.
@@ -317,7 +317,7 @@ def graficar_relaciones_categoricas(dataframe, vr):
     
     # Iterar sobre las columnas categóricas y crear gráficos
     for indice, columna in enumerate(lista_cat):
-        sns.countplot(x=columna, hue=vr, data=dataframe, ax=axes[indice], palette="magma")
+        sns.countplot(x=columna, hue=vr, data=dataframe, ax=axes[indice], palette=paleta)
         axes[indice].set_title(f"Relación {columna} vs {vr}")
         axes[indice].set_xlabel(columna)
         axes[indice].set_ylabel("Frecuencia")
